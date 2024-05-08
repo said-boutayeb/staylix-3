@@ -1,0 +1,413 @@
+/* --------------------------- Start Global Rules --------------------------- */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: #f92c2c;
+    --main-color-alt: #d41f1f;
+    --secondary-color: #1a1b1b;
+    --extra-color: #e0171709;
+    --section-background: #ececec;
+    --paragraph-color: rgb(119, 119, 119);
+    --main-transition: 0.3s;
+    --main-padding: 100px 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Start Container */
+.container {
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+/* Small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+
+@media(min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Container */
+/* --------------------------- End Global Rules --------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                Start Header                                */
+/* -------------------------------------------------------------------------- */
+.header {
+    background-color: white;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header .logo {
+    font-size: 25px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .logo span {
+    color: var(--main-color);
+}
+
+.header .main-nav {
+    display: flex;
+}
+
+.header .main-nav>li>a {
+    position: relative;
+    font-size: 18px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    color: var(--main-transition);
+    transition: var(--main-transition);
+}
+
+.header .main-nav>li>a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background-color: var(--main-color);
+    transition: var(--main-transition);
+}
+
+/* ----------------------------- Start Megamenu ----------------------------- */
+
+.header .main-nav .mega-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 50px);
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color);
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    opacity: 0;
+    transition: top var(--main-transition), opacity var(--main-transition);
+}
+
+.header .main-nav .mega-menu .image img {
+    max-width: 100%;
+}
+
+
+.header .mega-menu .links {
+    min-width: 250px;
+}
+
+.header .mega-menu .links li a {
+    color: var(--main-color);
+    display: block;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header .mega-menu .links li {
+    position: relative;
+}
+
+.header .mega-menu .links li::before {
+    content: '';
+    position: absolute;
+    background-color: var(--extra-color);
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    transition: var(--main-transition);
+}
+
+.header .mega-menu .links li:not(:last-child) {
+    border-bottom: 2px solid rgba(70, 3, 3, 0.082);
+}
+
+.header .mega-menu .links li i {
+    margin-right: 10px;
+}
+
+@media (max-width:992px) {
+    .header .mega-menu .image {
+        display: none;
+    }
+
+    .header .mega-menu .links {
+        width: 100%;
+        gap: 40px;
+    }
+}
+
+@media (max-width:767px) {
+    .header .main-nav .mega-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 0px;
+    }
+
+    .header .mega-menu .links li a {
+        padding: 10px;
+    }
+
+    .header .mega-menu .links:first-of-type li:last-child {
+        border-bottom: 2px solid rgba(70, 3, 3, 0.082);
+
+    }
+}
+
+/* ------------------------------ End Megamenu ------------------------------ */
+/* ------------------------------ Start hover ------------------------------- */
+.header .main-nav>li>a:hover::after {
+    width: 100%;
+}
+
+.header .main-nav>li>a:hover {
+    background-color: var(--extra-color);
+    color: var(--main-color);
+}
+
+.header .mega-menu .links li:hover::before {
+    width: 100%;
+}
+
+.header .main-nav>li:hover .mega-menu {
+    z-index: 1;
+    opacity: 1;
+    top: calc(100% + 1px);
+}
+
+/* -------------------------------- End hover ------------------------------- */
+/* small */
+@media (max-width:767px) {
+    .header .logo {
+        width: 100%;
+        height: 40px;
+    }
+
+    .header .main-nav {
+        margin: auto;
+    }
+
+    .header .main-nav>li>a {
+        font-size: 14px;
+        padding: 0px 10px;
+        height: 40px;
+    }
+
+    .header .main-nav>li>a:hover::after {
+        width: 0%;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                End Header                                  */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                Start Landing                               */
+/* -------------------------------------------------------------------------- */
+.landing {
+    position: relative;
+    min-height: calc(100vh - 60px);
+}
+
+.landing::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+    z-index: -1;
+}
+
+.landing .container {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 120px;
+}
+
+.landing .text h1 {
+    font-size: 40px;
+    margin: 0px;
+    letter-spacing: -2px;
+}
+
+.landing .text h1 a span {
+    color: var(--main-color);
+}
+
+.landing .text h1 a {
+    color: var(--secondary-color);
+}
+
+.landing .text p {
+    font-size: 23px;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color: #666;
+    max-width: 500px;
+}
+
+.landing .image img {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    animation: ub-and-down 5s linear infinite;
+}
+
+.landing .go-down {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    animation: bouncing 1.5s infinite;
+    color: #d41f1f96;
+    transition: var(--main-transition);
+}
+
+/* small */
+@media (max-width:767px) {
+    .landing .container {
+        justify-content: center;
+    }
+
+    .landing .text {
+        text-align: center;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .landing .text h1 {
+        font-size: 30px;
+    }
+
+    .landing .text p {
+        font-size: 14px;
+    }
+
+    .landing .image img {
+        display: none;
+    }
+}
+
+/* medium & larg */
+@media (min-width:767px) {
+    .landing .text {
+        flex: 1;
+    }
+
+    .landing .image {
+        flex: 1;
+    }
+}
+
+/* ----------------------------- Start Animation ---------------------------- */
+
+@keyframes ub-and-down {
+
+    0%,
+    100% {
+        bottom: 0px;
+    }
+
+    50% {
+        bottom: 50px;
+    }
+}
+
+@keyframes bouncing {
+
+    0%,
+    10%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-50%, 0px);
+    }
+
+    40%,
+    60% {
+        transform: translate(-50%, -15px)
+    }
+}
+
+/* ------------------------------ End Animation ----------------------------- */
+
+/* --------------------------------- :hover --------------------------------- */
+
+.landing .go-down:hover {
+    color: var(--main-color);
+}
+
+.landing .go-down:hover {
+    animation-play-state: paused;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 End Landing                                */
+/* -------------------------------------------------------------------------- */
