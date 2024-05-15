@@ -192,6 +192,13 @@ a {
     }
 }
 
+/* Small */
+@media (max-width:768px) {
+    .main-title {
+        font-size: 18px;
+    }
+}
+
 /* End main-title */
 
 /* Start Spikes */
@@ -238,6 +245,34 @@ a {
 }
 
 /*End Grid-Template */
+/* ----------------------------- Start Animation ---------------------------- */
+@keyframes ub-and-all {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+/* ------------------------------ End Animation ----------------------------- */
+
+@keyframes ub-and-all {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+
 
 /* ------------------------------ End Component ----------------------------- */
 
@@ -1176,6 +1211,7 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
 }
+
 .services .container .box {
     background-color: var(--text-color);
     position: relative;
@@ -1275,4 +1311,89 @@ a {
 
 /* -------------------------------------------------------------------------- */
 /*                                End Sirvices                                */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                              Start Our Skills                              */
+/* -------------------------------------------------------------------------- */
+
+.our-skills {
+    padding: var(--main-padding);
+}
+
+.our-skills .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.our-skills .container img {
+    position: relative;
+    animation: ub-and-all 3s linear infinite;
+}
+
+.our-skills .container .skills-content {
+    flex: 1;
+}
+
+.our-skills .container .skills-content .skill h4 {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 17px;
+    align-items: flex-end;
+    font-size: 18px;
+}
+
+.our-skills .container .skills-content .skill h4 span {
+    border: 1px solid var(--main-color-line);
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: var(--main-color);
+    border: 1px solid var(--main-color-line);
+}
+
+.our-skills .container .skills-content .skill .th-progress {
+    position: relative;
+    max-width: 100%;
+    min-width: 300px;
+    height: 35px;
+    background-color: var(--section-background);
+    border: 2px solid var(--text-color);
+    box-shadow: var(--main-box-shadow);
+}
+
+.our-skills .container .skills-content .skill .th-progress span {
+    position: absolute;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+/* Small */
+@media (max-width:991px) {
+
+    .our-skills .container .image {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               End Our Skills                               */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                              Start Work Steps                              */
+/* -------------------------------------------------------------------------- */
+.work-steps {
+    background-color: var(--section-background);
+    padding: var(--main-padding);
+
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                               End Work Steps                               */
 /* -------------------------------------------------------------------------- */
