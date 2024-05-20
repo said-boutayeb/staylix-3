@@ -715,7 +715,7 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     position: relative;
-    background-image: url(/imgs/line-1.png);
+    background-image: url(../imgs/line-1.png);
     background-size: cover;
 }
 
@@ -945,7 +945,7 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     position: relative;
-    background-image: url(/imgs/line-1.png);
+    background-image: url(../imgs/line-1.png);
     background-size: cover;
 }
 
@@ -1214,7 +1214,7 @@ a {
     position: relative;
     padding: var(--main-padding);
     background-color: var(--section-background);
-    background-image: url(/imgs/line-1.png);
+    background-image: url(../imgs/line-1.png);
     background-size: cover;
 }
 
@@ -1395,7 +1395,7 @@ a {
 .work-steps {
     padding: var(--main-padding);
     background-color: var(--section-background);
-    background-image: url(/imgs/line-1.png);
+    background-image: url(../imgs/line-1.png);
     background-size: cover;
     position: relative;
 }
@@ -1646,17 +1646,6 @@ a {
     text-transform: uppercase;
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
 /* Medium */
 @media(max-width:992px) {
     .events .container img {
@@ -1693,8 +1682,6 @@ a {
 
     }
 }
-
-
 
 /* -------------------------------------------------------------------------- */
 /*                                 End Events                                 */
