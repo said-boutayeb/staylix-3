@@ -208,7 +208,7 @@ a {
     top: 0;
     width: 100%;
     height: 30px;
-    z-index: 1;
+    z-index: 100;
     background: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
     animation: left-and-right 2s linear infinite;
 }
@@ -715,6 +715,8 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     position: relative;
+    background-image: url(/imgs/line-1.png);
+    background-size: cover;
 }
 
 .gallery .container .box img {
@@ -943,6 +945,8 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     position: relative;
+    background-image: url(/imgs/line-1.png);
+    background-size: cover;
 }
 
 .testimonials .box {
@@ -1210,6 +1214,8 @@ a {
     position: relative;
     padding: var(--main-padding);
     background-color: var(--section-background);
+    background-image: url(/imgs/line-1.png);
+    background-size: cover;
 }
 
 .services .container .box {
@@ -1387,8 +1393,11 @@ a {
 /*                              Start Work Steps                              */
 /* -------------------------------------------------------------------------- */
 .work-steps {
-    background-color: var(--section-background);
     padding: var(--main-padding);
+    background-color: var(--section-background);
+    background-image: url(/imgs/line-1.png);
+    background-size: cover;
+    position: relative;
 }
 
 .work-steps .container {
@@ -1409,10 +1418,8 @@ a {
     padding: 0px 20px;
 }
 
-
-
 .work-steps .content .box {
-    background-color: rgba(255, 255, 255, 0.45);
+    background-color: rgba(255, 255, 255, 0.733);
     padding: 30px;
     border: 2px solid var(--text-color);
     border-radius: 4px;
@@ -1425,7 +1432,6 @@ a {
 .work-steps .content .box.a {
     border-right-width: 8px;
     border-right-color: #693693;
-
 }
 
 .work-steps .content .box.b {
@@ -1529,4 +1535,167 @@ a {
 
 /* -------------------------------------------------------------------------- */
 /*                               End Work Steps                               */
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*                                Start Events                                */
+/* -------------------------------------------------------------------------- */
+
+.events {
+    padding: var(--main-padding);
+}
+
+
+
+.events .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.events .container img {
+    max-width: 450px;
+}
+
+.events .container .content {
+    flex: 1;
+    text-align: center;
+}
+
+.events .container .content .time {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 12px;
+
+}
+
+.events .container .content .time .unit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--main-color-line);
+    border-radius: 4px;
+}
+
+.events .container .content .time .unit span:first-child {
+    padding: 8px;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--main-color);
+    white-space: nowrap;
+}
+
+.events .container .content .time .unit span:last-child {
+    font-size: 14px;
+    border-top: 1px solid var(--main-color-line);
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    color: var(--paragraph-color);
+}
+
+.events .container .content h4 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.events .container .content p {
+    line-height: 1.6;
+    color: var(--paragraph-color);
+    font-size: 19px;
+}
+
+.events .container .subscribe {
+    flex: 100%;
+    margin-top: 40px;
+}
+
+.events .container .subscribe form {
+    background-color: var(--main-color-line);
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.events .container form input[type="text"] {
+    flex: 60%;
+    padding: 20px;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--text-color);
+    outline: none;
+    color:var(--secondary-color);
+    caret-color:var(--secondary-color);
+}
+
+.events .container form input[type="submit"] {
+    padding: 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Medium */
+@media(max-width:992px) {
+    .events .container img {
+        display: none;
+    }
+
+    .events .container .content h4 {
+        font-size: 23px;
+    }
+
+    .events .container .content p {
+        font-size: 15px;
+    }
+
+    .events .container .subscribe form {
+        flex-direction: column;
+    }
+
+    .events .container .content .time .unit span:first-child {
+        font-size: 20px;
+    }
+
+    .events .container .subscribe form {
+        border-radius: 0px;
+
+    }
+
+    .events .container form input[type="text"] {
+        border-radius: 0px;
+    }
+
+    .events .container form input[type="submit"] {
+        border-radius: 0px;
+
+    }
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 End Events                                 */
 /* -------------------------------------------------------------------------- */
