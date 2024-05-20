@@ -716,7 +716,6 @@ a {
     background-color: var(--section-background);
     position: relative;
     background-image: url(../imgs/line-1.png);
-    background-size: cover;
 }
 
 .gallery .container .box img {
@@ -946,7 +945,6 @@ a {
     background-color: var(--section-background);
     position: relative;
     background-image: url(../imgs/line-1.png);
-    background-size: cover;
 }
 
 .testimonials .box {
@@ -1215,7 +1213,6 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     background-image: url(../imgs/line-1.png);
-    background-size: cover;
 }
 
 .services .container .box {
@@ -1396,7 +1393,6 @@ a {
     padding: var(--main-padding);
     background-color: var(--section-background);
     background-image: url(../imgs/line-1.png);
-    background-size: cover;
     position: relative;
 }
 
