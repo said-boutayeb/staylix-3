@@ -1574,6 +1574,7 @@ a {
     align-items: center;
     border: 1px solid var(--main-color-line);
     border-radius: 4px;
+    transition: var(--main-transition);
 }
 
 .events .container .content .time .unit span:first-child {
@@ -1591,6 +1592,7 @@ a {
     text-align: center;
     padding: 8px;
     color: var(--paragraph-color);
+    transition: var(--main-transition);
 }
 
 .events .container .content h4 {
@@ -1613,7 +1615,7 @@ a {
     background-color: var(--main-color-line);
     max-width: 600px;
     margin: auto;
-    padding: 30px;
+    padding: 25px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -1622,13 +1624,13 @@ a {
 
 .events .container form input[type="text"] {
     flex: 60%;
-    padding: 20px;
+    padding: 15px 20px;
     border-radius: 40px;
     border: none;
     background-color: var(--text-color);
     outline: none;
-    color:var(--secondary-color);
-    caret-color:var(--secondary-color);
+    color: var(--secondary-color);
+    caret-color: var(--secondary-color);
 }
 
 .events .container form input[type="submit"] {
@@ -1641,7 +1643,9 @@ a {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
+    transition: var(--main-transition);
 }
+
 /* Medium */
 @media(max-width:992px) {
     .events .container img {
@@ -1666,7 +1670,6 @@ a {
 
     .events .container .subscribe form {
         border-radius: 0px;
-
     }
 
     .events .container form input[type="text"] {
@@ -1675,8 +1678,19 @@ a {
 
     .events .container form input[type="submit"] {
         border-radius: 0px;
-
     }
+}
+
+/* --------------------------------- :hover --------------------------------- */
+.events .container .content .time .unit:hover,
+.events .container .content .time .unit:hover span:last-child {
+    border-color: var(--main-color);
+}
+
+.events .container form input[type="submit"]:hover {
+
+    background-color: var(--main-color-alt);
+
 }
 
 /* -------------------------------------------------------------------------- */
