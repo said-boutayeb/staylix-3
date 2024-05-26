@@ -1922,7 +1922,6 @@ a {
 
 .video .holder {
     display: flex;
-    justify-content: center;
     background-color: var(--section-background);
     border: 1px solid rgb(209 209 209);
 }
