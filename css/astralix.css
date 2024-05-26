@@ -213,6 +213,16 @@ a {
     animation: left-and-right 2s linear infinite;
 }
 
+.spikes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ecececc7;
+    width: 100%;
+    height: 100%;
+}
+
 /* -------------------------------- animation ------------------------------- */
 
 @keyframes left-and-right {
@@ -718,16 +728,6 @@ a {
     background-image: url(../imgs/line-1.png);
 }
 
-.gallery::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #d4d4d46e;
-    width: 100%;
-    height: 100%;
-}
-
 .gallery .container .box img {
     max-width: 100%;
     transform: scale(1.08);
@@ -1229,16 +1229,6 @@ a {
     background-image: url(../imgs/line-1.png);
 }
 
-.services::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #d4d4d46e;
-    width: 100%;
-    height: 100%;
-}
-
 .services .container .box {
     background-color: var(--text-color);
     position: relative;
@@ -1358,7 +1348,36 @@ a {
 
 .our-skills .container img {
     position: relative;
-    animation: ub-and-all 3s linear infinite;
+    max-width: 500px;
+}
+
+.our-skills .container .image {
+    position: relative;
+}
+
+.our-skills .container .image::before {
+    position: absolute;
+    content: "";
+    background-image: url(../imgs/Feature3-Img3-Jim-Fahad-Digital.png);
+    width: 213px;
+    background-size: cover;
+    height: 124px;
+    right: -60px;
+    bottom: 64px;
+    z-index: 1;
+    animation: ub-and-all 8s linear infinite;
+}
+
+.our-skills .container .image::after {
+    position: absolute;
+    content: "";
+    background-image: url(../imgs/Feature2-Img2-Jim-Fahad-Digital.png);
+    width: 300px;
+    background-size: 300px;
+    height: 176px;
+    left: -84px;
+    top: 64px;
+    animation: ub-and-all 12s linear infinite;
 }
 
 .our-skills .container .skills-content {
@@ -1420,16 +1439,6 @@ a {
     position: relative;
 }
 
-.work-steps::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #d4d4d46e;
-    width: 100%;
-    height: 100%;
-}
-
 .work-steps .container {
     display: flex;
     justify-content: center;
@@ -1461,21 +1470,36 @@ a {
     align-items: center;
     position: relative;
     transition: var(--main-transition);
+    position: relative;
 }
 
-.work-steps .content .box.a {
-    border-right-width: 8px;
-    border-right-color: #693693;
+.work-steps .content .box.a::before,
+.work-steps .content .box.c::before,
+.work-steps .content .box.b::before {
+    content: "";
+    position: absolute;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    right: -2px;
+    top: -2px;
+    width: 5px;
+    height: calc(100% + 4px);
+    z-index: 1;
+    transition: var(--main-transition);
 }
 
-.work-steps .content .box.b {
-    border-right-width: 8px;
-    border-right-color: #1f5ebf;
+
+
+.work-steps .content .box.a::before {
+    background-color: #693693;
 }
 
-.work-steps .content .box.c {
-    border-right-width: 8px;
-    border-right-color: var(--main-color);
+.work-steps .content .box.c::before {
+    background-color: #1f5ebf;
+}
+
+.work-steps .content .box.b::before {
+    background-color: var(--main-color);
 }
 
 .work-steps .content .box::after {
@@ -1535,10 +1559,10 @@ a {
     height: 100%;
 }
 
-.work-steps .content .box:hover.a,
-.work-steps .content .box:hover.b,
-.work-steps .content .box:hover.c {
-    border: 2px solid var(--text-color);
+.work-steps .content .box:hover.a::before,
+.work-steps .content .box:hover.b::before,
+.work-steps .content .box:hover.c::before {
+    width: 15px;
 }
 
 /* -------------------------------- Animation ------------------------------- */
@@ -1579,8 +1603,6 @@ a {
 .events {
     padding: var(--main-padding);
 }
-
-
 
 .events .container {
     display: flex;
@@ -1735,12 +1757,338 @@ a {
 /*                                 End Events                                 */
 /* -------------------------------------------------------------------------- */
 
+/* -------------------------------------------------------------------------- */
+/*                                Start Pricing                               */
+/* -------------------------------------------------------------------------- */
+
+.pricing {
+    padding: var(--main-padding);
+    background-color: var(--section-background);
+    background-image: url(../imgs/line-1.png);
+    position: relative;
+}
+
+.pricing .container {
+    position: relative;
+}
+
+.pricing .container .box {
+    position: relative;
+    background-color: var(--text-color);
+    text-align: center;
+    box-shadow: var(--main-box-shadow);
+    z-index: 1;
+}
+
+.pricing .container .box::before,
+.pricing .container .box::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 50%;
+    background-color: rgb(221 221 221 / 24%);
+    z-index: -1;
+    transition: var(--main-transition);
+}
+
+.pricing .container .box::after {
+    bottom: 0;
+    right: 0;
+}
+
+.pricing .container .box::before {
+    top: 0;
+    left: 0;
+}
+
+.pricing .container .box .lable {
+    right: 25px;
+    position: absolute;
+    writing-mode: vertical-lr;
+    background-color: var(--main-color);
+    padding: 10px 10px 30px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.pricing .container .box .lable::after {
+    position: absolute;
+    content: "";
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent var(--text-color) transparent;
+    bottom: 0;
+    left: 0;
+    transition: var(--main-transition);
+}
+
+.pricing .container .box h4 {
+    font-weight: 900;
+    font-size: 22px;
+    margin: 30px auto;
+}
+
+.pricing .container .box img {
+    width: 90px;
+    opacity: .8;
+    filter: invert(1);
+    margin-bottom: 30px;
+}
+
+.pricing .container .box .price {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px
+}
+
+.pricing .container .box .price .amount {
+    font-size: 55px;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.pricing .container .box .price .time {
+    color: var(--paragraph-color);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.pricing .container .box ul {
+    text-align: left;
+}
+
+.pricing .container .box ul li {
+    padding: 20px 30px;
+    border-top: 1px solid var(--main-color-line);
+}
+
+.pricing .container .box ul li::before {
+    font-family: "font awesome 5 free";
+    content: "\f00c";
+    color: var(--main-color);
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.pricing .container .box a {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    color: var(--main-color);
+    background-color: var(--text-color);
+    font-weight: 600;
+    transition: var(--main-transition);
+    box-shadow: var(--main-box-shadow);
+}
+
+@media (min-width: 1200px) {
+    .pricing .container .box.popular {
+        top: -20px;
+    }
+}
+
+/* --------------------------------- :hover --------------------------------- */
+.pricing .container .box a:hover {
+    color: var(--text-color);
+    background-color: var(--main-color);
+}
+
+.pricing .container .box:hover::after,
+.pricing .container .box:hover::before {
+    width: 100%;
+}
+
+.pricing .container .box:hover .lable::after {
+    border-color: transparent transparent #f7f7f7 transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 End Pricing                                */
+/* -------------------------------------------------------------------------- */
 
 
+/* -------------------------------------------------------------------------- */
+/*                                 Start Video                                */
+/* -------------------------------------------------------------------------- */
+
+.video {
+    padding: var(--main-padding);
+}
+
+.video .holder {
+    display: flex;
+    justify-content: center;
+    background-color: var(--section-background);
+    border: 1px solid rgb(209 209 209);
+}
+
+.video .holder .list {
+    min-width: 300px;
+    background-color: var(--text-color);
+}
+
+.video .holder .list .name {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+
+.video .holder .list .name i {
+    cursor: pointer;
+}
 
 
+.video .holder .list ul li a {
+    display: flex;
+    flex-direction: column;
+    padding: 17px;
+    cursor: pointer;
+    gap: 15px;
+    color: var(--secondary-color);
+    transition: var(--main-transition);
+}
+
+.video .holder .list ul li span {
+    color: var(--paragraph-color);
+}
+
+.video .holder .list ul li:not(:last-child) {
+    border-bottom: 1px solid var(--main-color-line);
+}
+
+.video .holder .list ul li:first-child a {
+    color: var(--main-color);
+    background-color: var(--extra-color);
+}
 
 
+.video .holder .preview {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video .holder .preview video {
+    width: 100%;
+}
+
+.video .holder .preview p {
+    background-color: var(--text-color);
+    padding: 20px;
+}
+
+@media (max-width:992px) {
+    .video .holder {
+        flex-direction: column;
+    }
+}
+
+/* --------------------------------- :hover --------------------------------- */
+.video .holder .list ul li:hover a {
+    color: var(--main-color);
+    background-color: var(--extra-color);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  End Video                                 */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                 Start stats                                */
+/* -------------------------------------------------------------------------- */
+.stats {
+    padding: var(--main-padding);
+    background-image: url(../imgs/stats.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.stats::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeeef0;
+    z-index: -1;
+}
+
+.stats h4 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    position: relative;
+}
+
+.stats .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--text-color);
+    padding: 25px;
+    gap: 15px;
+    position: relative;
+}
+
+.stats .box:after,
+.stats .box::before {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 2px;
+    background-color: red;
+    transition: height .9s;
+}
+
+.stats .box::before {
+    left: 0px;
+    top: 0;
+}
+
+.stats .box::after {
+    right: 0px;
+    bottom: 0;
+}
+
+.stats .box .number {
+    font-size: 46px;
+    font-weight: 600;
+}
+
+.stats .box .text {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 20px;
+    font-style: italic;
+}
+
+@media (max-width:768px) {
+    .stats h4 {
+        font-size: 30px;
+    }
+}
+
+/* --------------------------------- :hover --------------------------------- */
+.stats .box:hover::after,
+.stats .box:hover::before {
+    height: 100%;
+
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  End stats                                 */
+/* -------------------------------------------------------------------------- */
 
 
 
@@ -1883,7 +2231,7 @@ a {
 }
 
 /* Small */
-@media (max-width:555px) {
+@media (max-width:566px) {
     .footer {
         text-align: center;
     }
