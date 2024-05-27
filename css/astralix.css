@@ -11,6 +11,7 @@
     --main-padding: 100px 0px;
     --main-box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
     --main-color-line: #eee;
+    --main-line-height:1.6;
 }
 
 * {
@@ -532,7 +533,7 @@ a {
 
 .landing .text p {
     font-size: 23px;
-    line-height: 1.7;
+    line-height: var(--main-line-height);
     margin: 5px 0 0;
     color: #666;
     max-width: 500px;
@@ -673,7 +674,7 @@ a {
 .articles .container .content p {
     margin-top: 10px;
     color: var(--paragraph-color);
-    line-height: 1.6;
+    line-height: var(--main-line-height);
     font-size: 17px;
 }
 
@@ -877,7 +878,7 @@ a {
 
 .featuers .container .box .text-content p {
     font-size: 23px;
-    line-height: 2;
+    line-height: var(--main-line-height);
     color: var(--paragraph-color);
 }
 
@@ -1003,7 +1004,7 @@ a {
 .testimonials .box .content p {
     font-size: 18px;
     color: var(--paragraph-color);
-    line-height: 1.6;
+    line-height:var(--main-line-height);
 }
 
 .testimonials .box .content ul {
@@ -1530,7 +1531,7 @@ a {
 }
 
 .work-steps .content .box .text p {
-    line-height: 1.8;
+    line-height: var(--main-line-height);
     font-size: 18px;
     color: var(--paragraph-color);
 }
@@ -1661,7 +1662,7 @@ a {
 }
 
 .events .container .content p {
-    line-height: 1.6;
+    line-height: var(--main-line-height);
     color: var(--paragraph-color);
     font-size: 19px;
 }
@@ -2082,31 +2083,129 @@ a {
 .stats .box:hover::after,
 .stats .box:hover::before {
     height: 100%;
-
 }
 
 /* -------------------------------------------------------------------------- */
 /*                                  End stats                                 */
 /* -------------------------------------------------------------------------- */
+.discount {
+    display: flex;
+    text-align: center;
+}
 
+.discount .discount-img {
+    animation: chang-background 16s infinite;
+    background-size: cover;
+    flex-basis: 50%;
+    position: relative;
+    z-index: 1;
+}
 
+.discount .discount-img::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f92c2cfa;
+    z-index: -1;
+}
 
+.discount .discount-img h3 {
+    color: var(--text-color);
+    font-size: 35px;
+    margin: 80px 0 30px;
+}
 
+.discount .discount-img p {
+    max-width: 500px;
+    margin: auto;
+    font-size: 18px;
+    line-height: var(--main-line-height);
+    color: var(--text-color);
+    font-weight: 600;
+}
 
+.discount .discount-img img {
+    max-width: 100%;
+    width: 300px;
+}
 
+.discount .discount-form {
+    flex-basis: 50%;
+    padding: 0px 30px;
+}
 
+.discount .discount-form h3 {
+    margin: 40px 0;
+    font-size: 35px;
+    letter-spacing: -2px;
+}
 
+.discount .discount-form form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 
+.discount .discount-form form input,
+.discount .discount-form form textarea {
+    padding: 18px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: #ececec5e;
+    border-bottom: 2px solid rgb(206 206 206);
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    outline: none;
+    caret-color: var(--main-color);
+}
 
+.discount .discount-form form textarea {
+    resize: none;
+    height: 200px;
+}
 
+.discount .discount-form form [type="submit"] {
+    margin-bottom: 50px;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
 
+@media (max-width:992px) {
+    .discount {
+        flex-direction: column;
+    }
+}
 
+/* -------------------------------- animation ------------------------------- */
+@keyframes chang-background {
 
+    0%,
+    100% {
+        background-image: url(../imgs/discount-background1.jpg);
+    }
 
+    50% {
 
+        background-image: url(../imgs/discount-background2.jpg);
+    }
+}
 
-
-
+/* --------------------------------- :hover --------------------------------- */
+.discount .discount-form form [type="submit"]:hover {
+    background-color: var(--main-color-alt);
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                Start footer                                */
@@ -2163,7 +2262,7 @@ a {
 }
 
 .footer .main-footer .box.social p {
-    line-height: 2;
+    line-height: var(--main-line-height);
     color: var(--paragraph-color);
 }
 
